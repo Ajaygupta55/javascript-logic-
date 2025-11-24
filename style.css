@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   background-color: #1a1a1a;
+}
+
+.calculator{
+    width: 320px;
+    background-color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    
+}
+
+/* Purane #display wale style ko isse replace kar do */
+.display {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    min-height: 120px;
+    background-color: #000;
+    color: white;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: right;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem; /* Chhota font */
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem; /* Bada font */
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    background-color: #252222;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover{
+    background-color: #323030;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.operator{
+    background-color: #141414;
+    color: rgb(207, 205, 201);
+}
+
+.operator:hover{
+    background-color: #323030;
+}
+
+.equal{
+    background-color: rgb(244, 98, 8);
+    color: #fff;
+}
+
+.equal:hover{
+    background-color: rgb(210, 84, 6);
+}
+
+/* style.css mein neeche add karein */
+
+/* Lamba number hone par font chhota karne ke liye (optional but cool) */
+#display {
+    font-size: 3rem; /* 48px se 3rem kiya */
+    word-wrap: break-word; /* Lambe numbers ko wrap karega */
+    word-break: break-all;
+}
+
+/* Button click par animation/feedback ke liye */
+.btn:active {
+    transform: scale(0.92);
+    background-color: #555; /* Click par thoda dark shade */
+}
+
+.operator:active {
+    background-color: #c0c0c0;
+}
+
+.equal:active {
+    background-color: #ffb14e;
+}
+

@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html ,body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    background-color: rgb(35, 34, 34);
+    color: rgb(226, 224, 224);
+    font-family: "Inter", sans-serif;
+}
+
+main,section{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 14px;
+}
+
+section , .infos{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.info{
+    padding: 8px 12px;
+    border: 2px solid rgb(243, 222, 222);
+    border-radius: 6px;
+}
+
+.board{
+   border: 2px solid rgb(243, 222, 222);
+   flex-grow: 1;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(40px,1fr));
+   grid-template-rows: repeat(auto-fill, minmax(40px,1fr));
+}
+
+.block{
+    /* height: 30px;
+    width: 30px; */
+    border: 1px solid rgb(116, 111, 111);
+    border-radius: 50%;
+}
+
+.fill{
+    background-color: rgb(252, 254, 252);
+}
+
+.food{
+    background-color: rgb(204, 14, 14);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgba(58, 56, 56, 0.496);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .start-game,
+.modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.modal .game-over{
+    display: none;
+}
+
+.btn{
+  padding: 12px 18px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.btn:hover{
+    transform: scale(1.2);
+}
