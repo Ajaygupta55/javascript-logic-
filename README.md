@@ -33,6 +33,4 @@ This project helped me improve my JavaScript logic-building skills—especially 
 
 ---
 
-## 📂 Project Structure
 
-Example:
