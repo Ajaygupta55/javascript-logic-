@@ -1,5 +1,4 @@
 /* =========================
-   script.js — Part 3 (FINAL)
    Full advanced Kanban features:
    - dynamic columns (add/remove)
    - reorder within column (insert at index)
@@ -15,16 +14,8 @@
 /* ---------- CONFIG & DOM refs ---------- */
 const STORAGE_KEY = "kb_full_v3";
 
-/*
-State structure:
-{
-  columnsOrder: [ 'todo', 'progress', 'done', ... ],
-  columns: {
-    todo: { id:'todo', title:'To Do', tasks: [ {id, title, description, priority, due, subtasks: [{id,text,done}], comments: [{id,text,when}], createdAt}, ... ] },
-    ...
-  }
-}
-*/
+
+
 
 const boardRoot = document.querySelector(".board"); // container for columns
 const addBtn = document.getElementById("add-btn");
@@ -563,8 +554,7 @@ importBtn.addEventListener("click", () => importFileInput.click());
 
 /* ---------- Column add handler (header-level) ---------- */
 (function attachAddColumnToHeader() {
-  // Add a button near existing controls (the HTML header has controls).
-  // If there's already an "Add Column" button inserted, don't duplicate.
+ 
   if (document.getElementById("add-col-btn")) return;
   const headerControls = document.querySelector(".controls");
   if (!headerControls) return;
@@ -593,15 +583,3 @@ loadState();
 renderBoard();
 refreshColumnSelect();
 
-/* ---------- Small animation improvements (CSS classes already present in HTML/CSS) ----------
-   - You can add CSS transitions for .task hover, .hover-over etc. in CSS (Part1).
-   - Here we only toggle classes for smoothness.
-*/
-
-/* ---------- End of script.js (Part 3) ----------
-   If you want, I'll also:
-   - Add inline UI to show subtasks and comments in a small popup (instead of prompt)
-   - Implement reorder-within-column visual placeholder (insert marker)
-   - Add drag-handle and touch support for mobile specifically
-   - Provide a GitHub-ready zip and readme
-*/
