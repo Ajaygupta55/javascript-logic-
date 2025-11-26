@@ -41,7 +41,7 @@ _Add your images inside `/assets` folder_
 ## 👤 Author
 **Ajay Gupta**  
 LinkedIn: www.linkedin.com/in/ajay-gupta-5aa1252ba  
-GitHub: https://github.com/<your-username>
+GitHub: https://github.com/Ajaygupta55
 
 ## 📄 License
 MIT License
