@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Advanced Kanban Board - Pure JS</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <div class="header">
+    <h2>Advanced Kanban Board</h2>
+
+    <div class="controls">
+      <input id="search" class="search" placeholder="Search..." />
+      <button id="add-btn" class="btn strong">+ Add Task</button>
+      <button id="export-btn" class="btn">Export</button>
+      <button id="import-btn" class="btn">Import</button>
+      <input id="import-json" type="file" hidden />
+    </div>
+  </div>
+
+  <!-- Kanban Columns -->
+  <div class="board">
+
+    <div id="todo" class="column">
+      <div class="col-head">
+        <span>To Do</span>
+        <span class="right">0</span>
+      </div>
+      <div class="tasks"></div>
+    </div>
+
+    <div id="progress" class="column">
+      <div class="col-head">
+        <span>In Progress</span>
+        <span class="right">0</span>
+      </div>
+      <div class="tasks"></div>
+    </div>
+
+    <div id="done" class="column">
+      <div class="col-head">
+        <span>Done</span>
+        <span class="right">0</span>
+      </div>
+      <div class="tasks"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <h3 id="modal-title">Add Task</h3>
+
+    <input id="task-title" class="input" placeholder="Title" />
+    <textarea id="task-desc" placeholder="Description (optional)"></textarea>
+
+    <select id="task-priority">
+      <option value="low">Low</option>
+      <option value="med">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <input id="task-due" type="date" class="input" />
+
+    <select id="task-column">
+      <option value="todo">To Do</option>
+      <option value="progress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+
+    <button id="save-task" class="btn strong">Save</button>
+    <button id="close-modal" class="btn">Cancel</button>
+  </div>
+</div>
+
+<!-- SNACKBAR -->
+<div id="snack" class="snack">
+  <span id="snack-text">Task deleted</span>
+  <button id="undo-btn" class="btn">Undo</button>
+</div>
+
+<!-- JS NEXT PART -->
+<script src="script.js"></script>
+
+</body>
+</html>

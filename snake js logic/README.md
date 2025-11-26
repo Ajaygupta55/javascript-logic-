@@ -30,7 +30,3 @@ This project helped me improve my JavaScript logic-building skills—especially 
 - **HTML**  
 - **CSS**  
 - **JavaScript**  
-
----
-
-

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --background-color: #0e0f0f;
+    --bg-button-color: #1b1b1b;
+    --primary-text-color: #ededed;
+    --bg-delete-color: #ff4c4c;
+
+    /* padding */
+    --padding-sm: 8px;
+    --padding-md: 16px;
+    --padding-lg: 24px;
+    --padding-xl: 32px;
+
+    /* border-radius */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --boredr-radius-xl: 20px;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    padding: var(--padding-md) var(--padding-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+}
+
+nav button{
+    padding: var(--padding-sm) var(--padding-md);
+    background-color: var(--bg-button-color);
+    border: none;
+    color: var(--primary-text-color);
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease in-out;
+    font-size: 1rem
+}
+
+nav button:hover{
+    background-color: #3d3d3d;
+}
+
+nav button:active{
+    transform: scale(0.95);  
+}
+
+nav .left{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+section{
+    padding: var(--padding-md) var(--padding-xl);
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--padding-xl);
+}
+
+section .task-column{
+    background-color: var(--bg-button-color);
+    flex-grow: 1;
+    /* flex-shrink: 0; */
+    width: 100%;
+    padding: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    border-radius: var(--border-radius-lg);
+    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+section .hover-over{
+  border: 2px dashed var(--primary-text-color);
+  scale: 1.05;
+}
+
+section .task-column .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--padding-md);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+section .task-column .task{
+    font-size: 1rem;
+    background-color: #3a3a3a;
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+    cursor: grabbing;
+}
+
+section .task-column .task button{
+    align-self: flex-end;
+    padding: var(--padding-sm) var(--padding-md);
+    border: none;
+    background-color: var(--bg-delete-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--primary-text-color);
+    transition: all 0.3s ease in-out;
+}
+
+section .task-column .task button:hover{
+    background-color: #ee3030;
+}
+
+section .task-column .task button:active{
+    transform: scale(0.95);
+}
+    
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active{
+    display: flex;
+}
+
+.modal .center{
+    background-color: var(--bg-button-color);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    z-index: 10;
+}
+
+.modal .center input, .modal .center textarea, .modal .center select{
+    padding: var(--padding-sm);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius-sm);
+    background-color: #3a3a3a;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+.modal .center button{
+    padding: var(--padding-sm) var(--padding-md);
+    border: 1px solid var(--primary-text-color);
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    transition: all 0.3s ease in-out;
+    background-color: var(--bg-button-color);
+    color: var(--primary-text-color);
+    width: fit-content;
+    align-self: center;
+}
+
+.modal .center button:active{
+    scale: 1.05;
+}
+
+.modal .bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #3a3a3a7c;
+    backdrop-filter: blur(5px);
+}

@@ -1,0 +1,190 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1a2b;
+  --muted:#94a3b8;
+  --low:#16a34a;
+  --med:#f59e0b;
+  --high:#ef4444;
+  --accent:#2563eb;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+}
+
+/* ---------- GLOBAL ---------- */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#0b1120;
+  color:white;
+}
+
+/* ---------- APP LAYOUT ---------- */
+.app{
+  max-width:1100px;
+  margin:20px auto;
+  padding:15px;
+}
+
+/* HEADER */
+.header{display:flex;justify-content:space-between;align-items:center}
+.controls{display:flex;gap:10px}
+
+.search{
+  padding:8px;
+  border-radius:6px;
+  border:1px solid #334155;
+  background:#0f172a;
+  color:white;
+}
+
+.btn{
+  background:#1e293b;
+  padding:8px 16px;
+  color:white;
+  border-radius:6px;
+  border:1px solid #334155;
+  cursor:pointer;
+}
+
+.btn.strong{
+  background:var(--accent);
+  border:none;
+}
+
+/* BOARD COLUMNS */
+.board{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:15px;
+  margin-top:20px;
+}
+
+.column{
+  background:var(--card);
+  padding:15px;
+  border-radius:10px;
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+}
+
+.col-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.tasks{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* ---------- TASK CARD ---------- */
+.task{
+  background:#0e1628;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  cursor:grab;
+  transition:0.2s;
+}
+
+/* hover animations */
+.task:hover{
+  transform:translateY(-2px);
+  border-color:#3b82f6;
+}
+
+/* drag animation */
+.task.dragging{
+  opacity:0.6;
+  transform:scale(0.95);
+}
+
+/* PRIORITY BADGE */
+.pri{
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:bold;
+}
+.pri.low{background:var(--low);}
+.pri.med{background:var(--med);}
+.pri.high{background:var(--high);}
+
+/* SUBTASKS */
+.subtasks{
+  margin-top:8px;
+  padding-left:10px;
+  border-left:2px solid #1e293b;
+}
+.subtasks div{font-size:13px;margin-bottom:4px}
+
+/* ACTION BUTTONS */
+.actions{
+  display:flex;
+  gap:6px;
+}
+.icon-btn{
+  background:#1e293b;
+  padding:4px 6px;
+  border-radius:5px;
+  color:#94a3b8;
+  cursor:pointer;
+}
+
+/* COLUMN DROP INDICATOR */
+.hover-over{
+  border:2px dashed #2563eb;
+}
+
+/* ---------- MODAL ---------- */
+.modal{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.6);
+  display:none; justify-content:center; align-items:center;
+}
+.modal.active{display:flex}
+
+.modal-card{
+  width:500px;
+  background:#0f1724;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid #334155;
+}
+
+.input,select,textarea{
+  width:100%;
+  padding:8px;
+  margin-bottom:10px;
+  border-radius:6px;
+  border:1px solid #334155;
+  background:#0b1220;
+  color:white;
+}
+
+/* ---------- SNACKBAR ---------- */
+.snack{
+  position:fixed;
+  left:50%; transform:translateX(-50%);
+  bottom:30px;
+  background:#1e293b;
+  padding:12px 16px;
+  border-radius:8px;
+  display:none;
+  align-items:center;
+  gap:10px;
+}
+.snack.show{display:flex}
+
+@media (max-width:700px){
+  .board{grid-template-columns:1fr}
+}
+
+.right{
+    margin-left: 25px;
+}
